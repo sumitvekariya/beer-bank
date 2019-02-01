@@ -1,19 +1,47 @@
-<div class="header">
-  <div class="sides">
-    <a href="#" class="logo">BLOG</a>
+<section ngClass.gt-xs="header-main-section" ngClass.xs="xs-header-main-section">
+  <div fxLayout="row" fxLayoutAlign="start start" class="first-row">
+    <div fxFlex="7"></div>
+    <div fxFlex="20"></div>
+    <div fxFlex fxLayoutGap="1.5%" fxLayoutGap.xs="1%" fxLayoutGap.sm="2%" fxLayoutAlign="flex-end">
+      <button fxHide.lt-md mat-raised-button [color]="'home-fav-button'">
+        <span style="color:white;">Home</span>
+      </button>
+      <button fxHide.lt-md mat-raised-button [color]="'home-fav-button'" (click)="openLogin()"><span style="color:white;">Favourites</span></button>
+
+      <span class="fa-stack" fxHide.gt-sm style="color: #33cc99;" matTooltip="SUBMIT AN APP SPEC">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-plus-square fa-stack-1x fa-inverse"></i>
+      </span>
+      <span class="fa-stack" (click)="openLogin()" fxHide.gt-sm style="color: #33cc99;" matTooltip="Login">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-sign-in fa-stack-1x fa-inverse" aria-hidden="true"></i>
+        <!-- <i class="fa fa-flag fa-stack-1x fa-inverse"></i> -->
+      </span>
+
+
+      <!-- <button mat-mini-fab [color]="'xs-submit-spec-button'" fxHide.gt-sm>
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button mat-mini-fab [color]="'xs-login'" fxHide.gt-sm>
+        <mat-icon>edit</mat-icon>
+      </button> -->
+    </div>
+    <div fxFlex="7"></div>
   </div>
-  <div class="sides"> <a href="#" class="menu">-</a></div>
-  <div class="info">
-  <h4><a href="#category">UI DESIGN</a></h4>
-    <h1>ANIMATED HEADERS ARE THE BEST</h1>
-    <div class="meta">
-      <a  href="https://twitter.com/nodws" target="_b" class="author"></a><br>
-      By <a href="https://twitter.com/nodws" target="_b">James Nodws</a> on May 30, 2017
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="second-row">
+    <div>
+      <div ngClass.gt-xs="header-title" ngClass.xs="xs-header-title">The Beer Bank</div>
     </div>
   </div>
-</div>
-<section class="content">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In nisl turpis, porttitor et finibus id, viverra a metus. Praesent non ante sed orci posuere varius quis sit amet dui. Cras molestie magna orci, id gravida dolor molestie in. Duis sollicitudin turpis quis tortor egestas, ut ultrices nisl elementum. Vestibulum sed ipsum eget nulla laoreet cursus in ac sem. Integer a suscipit justo, quis aliquam sapien. Maecenas et tellus nibh. Vivamus tincidunt eros id commodo pellentesque.</p>
-  <p align="center"><a href="https://twitter.com/nodws" class="btn twtr" target="_b">Follow me on Twitter</a>
-  </p>
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="third-row">
+    <div ngClass.gt-xs="header-description" ngClass.xs="xs-header-description">Find your favourite beer here</div>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center" class="search-row">
+    <!-- <div ngClass.gt-xs="header-description" ngClass.xs="xs-header-description">Find curated app spec for all kinds of
+      app and a variety of app sample for app</div> -->
+    <input placeholder="Search for Beer name" class="search-box">
+  </div>
 </section>

@@ -1,9 +1,48 @@
 /* You can add global styles to this file, and also import other style files */
 
+$primary : #f79400;
+
 body {
   margin: 0px;
+  // background-color: #00000014;
 }
 
-*{
-font-family: 'Roboto', sans-serif;
+* {
+  font-family: 'Roboto', sans-serif;
 }
+
+.mat-dialog-container {
+  padding: 0 !important;
+}
+
+mat-toolbar {
+  position: fixed;
+  background-color: rgba(0,0,0,.12) !important;
+  z-index: 100;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+// .mat-dialog-content {
+//   padding: 0 !important;
+//   margin: 0 !important;
+//   height: auto;
+// }

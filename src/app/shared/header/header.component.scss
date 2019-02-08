@@ -1,5 +1,5 @@
 .header-main-section {
-  height: 19vw;
+  height: 16vw;
   background-color: #f79400;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .first-row {
-  padding-top: 1.5vw;
+  padding-top: 4.5vw;
 }
 
 .second-row {
@@ -37,7 +37,7 @@
 }
 
 .header-title {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 600;
   color: white;
   // font-weight: 600;
@@ -70,6 +70,11 @@
   width: 25%;
   height: 30px;
   text-indent: 2%;
+}
+
+.advanced-search {
+  font-size: 1.3vw;
+  color: white;
 }
 
 // :host /deep/.mat-checkbox-inner-container {

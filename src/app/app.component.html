@@ -1,1 +1,16 @@
-<router-outlet></router-outlet>
+<mat-toolbar>
+  <mat-toolbar-row>
+    <i class="fas fa-beer" style="margin-right: 1%" (click)="redirect('home')"></i>
+    <h4 style="font-weight: 600;" (click)="redirect('home')"> Beer Bank</h4>
+
+    <div fxFlex></div>
+    <div fxLayoutGap="5%" fxLayoutGap.xs="1%" fxLayoutGap.sm="2%" fxLayoutAlign="flex-end">
+        <button fxLayoutAlign="flex-end" fxHide.lt-md mat-raised-button [color]="'home-fav-button'" (click)="redirect('home')">
+            <span style="color:white;">Home</span>
+          </button>
+          <button fxHide.lt-md mat-raised-button [color]="'home-fav-button'" (click)="redirect('favourites')"><span style="color:white;">Favourites</span></button>
+    </div>
+    
+  </mat-toolbar-row>
+</mat-toolbar>
+<beer-bank-home></beer-bank-home>

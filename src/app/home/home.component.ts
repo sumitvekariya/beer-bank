@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BeerService } from '../shared/beer.service';
 
 @Component({
   selector: 'beer-bank-home',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BeerBankHomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private beerService: BeerService) { }
 
   ngOnInit() {
+    this.beerService.fetchBeersList();
   }
 
 }

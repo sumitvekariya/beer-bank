@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+$font: 'Lato',
+sans-serif;
+
+$white: #F5F5F5;
+$light: #E0C9CB;
+$pink: #D9AAB7;
+$orange: #f79400;
+$dark: #4E4E4E;
+
+/* center container in the middle */
+html {
+  display: grid;
+  min-height: 100%;
+}
+
+body {
+  display: grid;
+  background: $light;
+  font-family: $font, sans-serif;
+  text-transform: uppercase;
+}
+
+.container {
+  position: relative;
+  margin: auto;
+//   overflow: auto;
+  width: 710px;
+  height: 95vh;
+  background: $white;
+//   box-shadow: 5px 5px 15px rgba($orange, .5);
+//   border-radius: 10px;
+}
+
+p {
+  font-size: 0.9em;
+  color: $orange;
+  letter-spacing: 1px;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: $dark;
+  margin-top: -5px;
+  margin-bottom: 0;
+}
+
+h4 {
+  color: $orange;
+  margin-top: 0px;
+}
+
+img {
+  width: auto;
+  height: 400px;
+  margin-top: 47px;
+  display: block;
+  margin: 47px auto;
+//   position: absolute;
+//   left: 11%;
+}
+
+.images {
+  width: 40%;
+//   height: -webkit-fill-available;;
+}
+
+.quantity-description {
+  font-size: 1em;
+}
+
+.slideshow-buttons {
+  top: 70%;
+  display: none;
+}
+
+.one,
+.two,
+.three,
+.four {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $light;
+}
+
+.one {
+  left: 22%;
+}
+
+.two {
+  left: 27%;
+}
+
+.three {
+  left: 32%;
+}
+
+.four {
+  left: 37%;
+}
+
+.product {
+  position: static;
+  margin-top: 47px;
+  width: 64%;
+  height: 100%;
+//   top: 14.5%;
+  left: 34%;
+}
+
+.desc {
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 17px;
+  color: $dark;
+  font-size: .9em;
+  line-height: 1.6em;
+  margin-right: 25px;
+  text-align: justify;
+}
+
+.serve {
+    // padding-left: 16px;
+    text-transform: none;
+    letter-spacing: 0;
+    // margin-bottom: 17px;
+    color: $dark;
+    font-size: .9em;
+    line-height: 1.5em;
+    margin-right: 25px;
+    text-align: justify;
+  }
+
+button {
+  background: darken($light, 10%);
+  padding: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: -1px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: $white;
+  cursor: pointer;
+
+  &:hover {
+    background: $orange;
+    transition: all .4s ease-in-out;
+  }
+}
+
+.add {
+  width: 67%;
+}
+
+.like {
+  width: 22%;
+}
+
+.sizes {
+  display: grid;
+  color: $pink;
+  grid-template-columns: repeat(auto-fill, 30px);
+  width: 60%;
+  grid-gap: 4px;
+  margin-left: 20px;
+  margin-top: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.pick {
+  margin-top: 11px;
+  margin-bottom: 0;
+  margin-left: 20px;
+}
+
+.size {
+  padding: 9px;
+  border: 1px solid $light;
+  font-size: 0.7em;
+  text-align: center;
+
+  &:hover {
+    background: $orange;
+    color: $white;
+    transition: all .4s ease-in-out;
+  }
+}
+
+.focus {
+  background: $orange;
+  color: $white;
+}

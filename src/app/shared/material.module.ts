@@ -33,6 +33,7 @@ import {
     MatTabsModule,
     MatStepperModule
 } from '@angular/material';
+import { MomentDateModule } from '@angular/material-moment-adapter'
 import { CdkTableModule } from '@angular/cdk/table';
 
 @NgModule({
@@ -69,7 +70,8 @@ import { CdkTableModule } from '@angular/cdk/table';
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
-        CdkTableModule
+        CdkTableModule,
+        MomentDateModule
     ],
     exports: [
         MatAutocompleteModule,
@@ -103,7 +105,8 @@ import { CdkTableModule } from '@angular/cdk/table';
         MatTabsModule,
         MatToolbarModule,
         MatTooltipModule,
-        CdkTableModule
+        CdkTableModule,
+        MomentDateModule
     ]
 })
 export class MaterialModule {}

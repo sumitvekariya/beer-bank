@@ -1,0 +1,5 @@
+<div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center" class="beer-list">
+  <ng-container *ngFor="let beer of (favouriteBeers$ | async); index as i">
+    <beer-bank-beer fxFlex="0 1 calc(33.3% - 30px)" [beer]="beer"></beer-bank-beer>
+  </ng-container>
+</div>

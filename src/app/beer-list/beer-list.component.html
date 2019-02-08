@@ -1,0 +1,19 @@
+
+<!-- <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center" style="margin-top: 60px;"> -->
+<!-- <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
+    <div *cdkVirtualFor="let item of items; templateCacheSize: 0" class="example-item">{{item}}</div>
+    <ng-container *cdkVirtualFor="let beer of (beers$ | async); templateCacheSize: 0">
+      <beer-bank-beer fxFlex="0 1 calc(33.3% - 30px)" [beer]="beer"></beer-bank-beer>
+    </ng-container>
+  </cdk-virtual-scroll-viewport> -->
+<!-- </div> -->
+<cdk-virtual-scroll-viewport itemSize="10" class="example-viewport beer-list">
+  <app-header></app-header>
+  <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center" style="margin-top: 60px;">
+
+    <ng-container *cdkVirtualFor="let beer of (beers$ | async); index as i">
+      <beer-bank-beer fxFlex="0 1 calc(33.3% - 30px)" [beer]="beer"></beer-bank-beer>
+    </ng-container>
+
+  </div>
+</cdk-virtual-scroll-viewport>

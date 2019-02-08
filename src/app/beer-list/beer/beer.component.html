@@ -1,0 +1,17 @@
+<div class="wrapper" [ngStyle]="{'width': isForSuggestion ? '180px': '230px'}" (click)="openBeerDetailsDialog()"
+  [class.shadow]="mouseOvered" (mouseout)="mouseOvered=false" (mouseover)="mouseOvered=true">
+  <div class="top-icons" (click)="markFavouriteOrUnFavourite()">
+    <i class="fas fa-long-arrow-alt-left" style="display: none;"></i>
+    <i class="fas fa-ellipsis-v" style="display: none;"></i>
+
+    <i *ngIf="!(beer.isFavourited)" [ngClass]="{'far fa-heart': true}" [ngStyle]="{'color': '#f79400'}"></i>
+    <i *ngIf="beer.isFavourited" [ngClass]="{'fa fa-heart': true}" [ngStyle]="{'color': '#f79400'}"></i>
+  </div>
+
+  <div class="profile">
+    <img [src]="beer?.image_url" class="thumbnail">
+    <div class="check"><i class="fas fa-check"></i></div>
+    <h3 class="name">{{beer?.name}}</h3>
+    <p class="description">{{beer?.tagline}}</p>
+  </div>
+</div>

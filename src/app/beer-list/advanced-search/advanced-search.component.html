@@ -1,0 +1,71 @@
+<section>
+
+  <cdk-virtual-scroll-viewport itemSize="10" class="viewport beer-list">
+      <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 70px;" fxLayoutGap="20px">
+
+          <mat-form-field floatPlaceholder="auto">
+            <input matInput [(ngModel)]="maxIBU" type="number" placeholder="Max IBU" #templateVariable maxLength="3">
+            <mat-hint align="start">Less than {{maxIBU}} IBU</mat-hint>
+          </mat-form-field>
+      
+          <mat-form-field floatPlaceholder="auto">
+            <input matInput [(ngModel)]="minIBU" type="number" placeholder="Min IBU" #templateVariable maxLength="3">
+            <mat-hint align="start">More than {{minIBU}} IBU</mat-hint>
+          </mat-form-field>
+      
+          <mat-form-field floatPlaceholder="auto">
+            <input matInput [(ngModel)]="maxABV" type="number" placeholder="Max ABV" #templateVariable maxLength="3">
+            <mat-hint align="start">Less than {{maxABV}} IBU</mat-hint>
+          </mat-form-field>
+      
+          <mat-form-field floatPlaceholder="auto">
+            <input matInput [(ngModel)]="minABV" type="number" placeholder="Min ABV" #templateVariable maxLength="3">
+            <mat-hint align="start">More than {{minABV}} ABV</mat-hint>
+          </mat-form-field>
+      
+        </div>
+      
+        <div fxLayout="row" fxLayoutAlign="center center" style="margin-top: 20px;" fxLayoutGap="20px">
+      
+          <mat-form-field floatPlaceholder="auto">
+            <input matInput [(ngModel)]="maxEBC" type="number" placeholder="Max EBC" #templateVariable maxLength="3">
+            <mat-hint align="start">Less than {{maxEBC}} EBC</mat-hint>
+          </mat-form-field>
+      
+          <mat-form-field floatPlaceholder="auto">
+            <input matInput [(ngModel)]="minEBC" type="number" placeholder="Min EBC" #templateVariable maxLength="3">
+            <mat-hint align="start">More than {{minEBC}} EBC</mat-hint>
+          </mat-form-field>
+      
+          <mat-form-field style="width: 12%">
+            <input matInput [matDatepicker]="bb" placeholder="Brewed Before" [formControl]="brewedBefore">
+            <mat-datepicker-toggle matSuffix [for]="bb"></mat-datepicker-toggle>
+            <mat-datepicker #bb startView="multi-year" (yearSelected)="chosenYearHandler($event, brewedBefore)"
+              (monthSelected)="chosenMonthHandler($event, bb, brewedBefore)">
+            </mat-datepicker>
+          </mat-form-field>
+      
+          <mat-form-field style="width: 12%">
+            <input matInput [matDatepicker]="ba" placeholder="Brewed After" [formControl]="brewedAfter">
+            <mat-datepicker-toggle matSuffix [for]="ba"></mat-datepicker-toggle>
+            <mat-datepicker #ba startView="multi-year" (yearSelected)="chosenYearHandler($event, brewedAfter)"
+              (monthSelected)="chosenMonthHandler($event, ba, brewedAfter)">
+            </mat-datepicker>
+          </mat-form-field>
+      
+        </div>
+      
+        <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+          <button mat-raised-button color="primary" (click)="search()">Search</button>
+          <button mat-raised-button color="primary" (click)="clear()">Clear</button>
+        </div>
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center" style="margin-top: 60px;">
+  
+      <ng-container *cdkVirtualFor="let beer of (beers$ | async) index as i">
+        <beer-bank-beer fxFlex="0 1 calc(33.3% - 30px)" [beer]="beer"></beer-bank-beer>
+      </ng-container>
+  
+    </div>
+  </cdk-virtual-scroll-viewport>
+
+</section>

@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { BeerService } from '../beer.service';
 import { fromEvent } from 'rxjs';
 import { debounceTime, map, distinctUntilChanged, switchMap } from 'rxjs/operators';
@@ -8,18 +8,11 @@ import { debounceTime, map, distinctUntilChanged, switchMap } from 'rxjs/operato
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit, AfterViewInit {
+export class HeaderComponent implements AfterViewInit {
 
   @ViewChild('searchInput') input: ElementRef;
 
   constructor(private beerService: BeerService) { }
-
-  ngOnInit() {
-  }
-
-  // searchBeer(searchText: string) {
-  //   this.beerService.setSearch(searchText);
-  // }
 
   ngAfterViewInit() {
     fromEvent<any>(this.input.nativeElement, 'keyup').

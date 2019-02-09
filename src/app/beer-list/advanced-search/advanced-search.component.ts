@@ -5,15 +5,10 @@ import {MatDatepicker} from '@angular/material/datepicker';
 import * as _moment from 'moment';
 import { FormControl } from '@angular/forms';
 import { BeerService } from 'src/app/shared/beer.service';
-// tslint:disable-next-line:no-duplicate-imports
-// import {default as _rollupMoment, Moment} from 'moment';
 import { Observable } from 'rxjs';
 import { Beer } from '../beer/beer.model';
 
 const moment = _moment;
-
-// See the Moment.js docs for the meaning of these formats:
-// https://momentjs.com/docs/#/displaying/format/
 export const MY_FORMATS = {
   parse: {
     dateInput: 'MM/YYYY',
@@ -107,14 +102,6 @@ export class AdvancedSearchComponent implements OnInit {
     if (this.brewedAfter.value) {
       searchParams += '&brewed_after=' + moment(this.brewedAfter.value).format('MM[-]YYYY');
     }
-    console.log(this.maxIBU);
-    console.log(this.minIBU);
-    console.log(this.maxABV);
-    console.log(this.minABV);
-    console.log(this.maxEBC);
-    console.log(this.minEBC);
-    console.log(moment(this.brewedBefore.value).format('MM[-]YYYY'));
-    console.log(moment(this.brewedAfter.value).format('MM[-]YYYY'));
     this.beers$ = this.beerService.advancedSearch(searchParams);
   }
 

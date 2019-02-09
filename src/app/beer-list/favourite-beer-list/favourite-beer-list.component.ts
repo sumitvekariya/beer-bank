@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { distinctUntilChanged, map} from 'rxjs/operators';
 import { BeerService } from '../../shared/beer.service';
 import { Beer } from '../beer/beer.model';
 
@@ -17,20 +16,6 @@ export class FavouriteBeerListComponent implements OnInit {
 
   ngOnInit() {
     this.favouriteBeers$ = this.beerService.getFavoriteBeers();
-
-    this.beerService.searchValue.subscribe( (searchText: string) => {
-      if (searchText) {
-        this.favouriteBeers$ =  this.beerService.getBeersListValue().pipe(
-          distinctUntilChanged(),
-          map( (beers: any) =>  {
-            console.log(beers);
-            return beers.filter( b => b.name.toLowerCase().includes(searchText.toLowerCase()));
-          })
-        );
-      } else {
-        this.favouriteBeers$ = this.beerService.getFavoriteBeers();
-      }
-    });
   }
 
 }

@@ -11,7 +11,7 @@ export class BeerBankHomeComponent implements OnInit {
   constructor(private beerService: BeerService) { }
 
   ngOnInit() {
-    this.beerService.fetchBeersList();
+    // this.beerService.fetchBeersList();
   }
 
 }

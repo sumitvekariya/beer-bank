@@ -1,5 +1,5 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
-import { MAT_DIALOG_DATA, MatDialog, MatDialogRef } from '@angular/material';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { Beer } from '../beer/beer.model';
 import { Observable } from 'rxjs';
 import { BeerService } from '../../shared/beer.service';
@@ -13,7 +13,6 @@ import { map } from 'rxjs/operators';
 export class BeerDetailsDialogComponent implements OnInit {
 
   beers$: Observable<Beer[]>;
-  temp = new Array(3);
 
   constructor(
     public dialogRef: MatDialogRef<BeerDetailsDialogComponent>,

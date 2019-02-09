@@ -1,19 +1,12 @@
-
-<!-- <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center" style="margin-top: 60px;"> -->
-<!-- <cdk-virtual-scroll-viewport itemSize="10" class="example-viewport">
-    <div *cdkVirtualFor="let item of items; templateCacheSize: 0" class="example-item">{{item}}</div>
-    <ng-container *cdkVirtualFor="let beer of (beers$ | async); templateCacheSize: 0">
-      <beer-bank-beer fxFlex="0 1 calc(33.3% - 30px)" [beer]="beer"></beer-bank-beer>
-    </ng-container>
-  </cdk-virtual-scroll-viewport> -->
-<!-- </div> -->
-<cdk-virtual-scroll-viewport itemSize="10" class="example-viewport beer-list">
+<ng-container *ngIf="beers$ | async as beers">
   <app-header></app-header>
-  <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center" style="margin-top: 60px;">
-
-    <ng-container *cdkVirtualFor="let beer of (beers$ | async); index as i">
-      <beer-bank-beer fxFlex="0 1 calc(33.3% - 30px)" [beer]="beer"></beer-bank-beer>
-    </ng-container>
-
-  </div>
-</cdk-virtual-scroll-viewport>
+  <cdk-virtual-scroll-viewport itemSize="120" class="example-viewport beer-list" (scrolledIndexChange)="nextBatch($event)">
+    <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="center center" style="margin-top: 60px;">
+      <ng-container *cdkVirtualFor="let beer of beers; index as i; trackBy: trackByIdx; let count = index;">
+        <beer-bank-beer style="height: 360px; width: auto" fxFlex="0 1 calc(33.3% - 100px)" [beer]="beer"></beer-bank-beer>
+      </ng-container>
+    </div>
+    <iframe style="margin: 0 auto; display: flex" *ngIf="theEnd" src="https://giphy.com/embed/lD76yTC5zxZPG" width="480"
+      height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+  </cdk-virtual-scroll-viewport>
+</ng-container>

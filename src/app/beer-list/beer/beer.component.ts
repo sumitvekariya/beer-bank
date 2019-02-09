@@ -23,6 +23,7 @@ export class BeerComponent implements OnInit {
 
   markFavouriteOrUnFavourite() {
     this.beerService.markFavouriteOrUnFavourite(this.beer.id, !this.beer.isFavourited);
+    // this.beer.isFavourited = !this.beer.isFavourited;
   }
 
   openBeerDetailsDialog(): void {

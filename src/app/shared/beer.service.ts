@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { applicationUrls } from './application_urls';
 import { Observable, BehaviorSubject, of } from 'rxjs';
-import { map, tap, catchError, shareReplay, } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Beer } from '../beer-list/beer/beer.model';
 
 @Injectable({
@@ -18,31 +18,17 @@ export class BeerService {
 
   constructor(private http: HttpClient) { }
 
-  fetchBeersList() {
-    this.http.get(applicationUrls.getAllBeers)
-      .pipe(
-        shareReplay(1)
-      )
-      .subscribe((beers: Beer[]) => {
-        beers.forEach((b: Beer, index: number) => {
-          beers[index].isFavourited = false;
-        });
-        this.beerSubject.next(beers);
-      });
-  }
-
   getBeersListValue(): Observable<Beer[]> {
     return this.beersList$;
   }
 
   setSearch(searchText: string) {
-    // this.search.next(searchText);
     if (searchText) {
       return this.http.get(applicationUrls.searchBeersBasedOnName + searchText).pipe(
         tap((beers: Beer[]) => this.beerSubject.next(beers))
       );
     } else {
-      this.fetchBeersList();
+      this.getBeersInfinite(1);
       return of(null);
     }
   }
@@ -70,6 +56,19 @@ export class BeerService {
   advancedSearch(params: string): Observable<Beer[]> {
     return this.http.get(applicationUrls.getAllBeers + params).pipe(
       map((beers: Beer[]) => beers)
+    );
+  }
+
+  getBeersInfinite(pageNumber) {
+    return this.http.get(applicationUrls.getAllBeers + '?page=' + pageNumber + '&per_page=40').pipe(
+      map((beers: Beer[]) => {
+        beers.forEach((b: Beer, index: number) => {
+          beers[index].isFavourited = false;
+        });
+        const temp = this.beerSubject.value.slice().concat(beers);
+        this.beerSubject.next(temp);
+        return beers;
+      }),
     );
   }
 }

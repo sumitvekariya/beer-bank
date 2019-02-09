@@ -5,12 +5,12 @@
 
     <div fxFlex></div>
     <div fxLayoutGap="5%" fxLayoutGap.xs="1%" fxLayoutGap.sm="2%" fxLayoutAlign="flex-end">
-        <button fxLayoutAlign="flex-end" fxHide.lt-md mat-raised-button [color]="'home-fav-button'" (click)="redirect('home')">
-            <span style="color:white;">Home</span>
-          </button>
-          <button fxHide.lt-md mat-raised-button [color]="'home-fav-button'" (click)="redirect('favourites')"><span style="color:white;">Favourites</span></button>
+      <button fxLayoutAlign="flex-end" mat-raised-button [color]="'home-fav-button'" (click)="redirect('home')">
+        <span style="color:white;">Home</span>
+      </button>
+      <button mat-raised-button [color]="'home-fav-button'" (click)="redirect('favourites')"><span style="color:white;">Favourites</span></button>
     </div>
-    
+
   </mat-toolbar-row>
 </mat-toolbar>
 <beer-bank-home></beer-bank-home>

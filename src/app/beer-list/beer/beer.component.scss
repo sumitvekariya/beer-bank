@@ -26,6 +26,8 @@ $blue1-gradient: linear-gradient(to bottom right, #5E5AEC, #3F9EFC);
 $blue2-gradient: linear-gradient(to bottom right, #6452E9, #639FF9);
 $white: #F5F5F5;
 $rose: #BA7E7E;
+$orange: #f79400;
+$gray: #b9b7b7;
 $shadow: 0 13px 26px rgba(#000, .2),
 0 3px 6px rgba(#000, .2);
 
@@ -105,7 +107,7 @@ $shadow: 0 13px 26px rgba(#000, .2),
     }
 
     .name {
-      color: #2D354A;
+      color: $orange;
       font-size: 24px;
       font-weight: 600;
       text-align: center;
@@ -124,7 +126,7 @@ $shadow: 0 13px 26px rgba(#000, .2),
     }
 
     .description {
-      color: #080911;
+      color: $gray;
       font-size: 14px;
       font-weight: 300;
       text-align: center;

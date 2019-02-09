@@ -6,7 +6,8 @@ $white: #F5F5F5;
 $light: #E0C9CB;
 $pink: #D9AAB7;
 $orange: #f79400;
-$dark: #4E4E4E;
+$dark: #585858e8;
+$lightgray: #cec8c8;
 
 /* center container in the middle */
 html {
@@ -24,31 +25,38 @@ body {
 .container {
   position: relative;
   margin: auto;
-//   overflow: auto;
+  //   overflow: auto;
   width: 710px;
   height: 95vh;
   background: $white;
-//   box-shadow: 5px 5px 15px rgba($orange, .5);
-//   border-radius: 10px;
+  //   box-shadow: 5px 5px 15px rgba($orange, .5);
+  //   border-radius: 10px;
 }
 
-p {
-  font-size: 0.9em;
-  color: $orange;
+p {}
+
+.tagline {
+  color: $lightgray;
+  font-size: 1.1em;
+  // color: $orange;
   letter-spacing: 1px;
   margin-top: 0;
 }
 
 h1 {
   font-size: 1.8em;
-  color: $dark;
+  color: $orange;
   margin-top: -5px;
-  margin-bottom: 0;
+  margin-bottom: 3px;
 }
 
 h4 {
-  color: $orange;
+  color: $dark;
   margin-top: 0px;
+}
+
+h3 {
+  color: $orange;
 }
 
 img {
@@ -57,13 +65,13 @@ img {
   margin-top: 47px;
   display: block;
   margin: 47px auto;
-//   position: absolute;
-//   left: 11%;
+  //   position: absolute;
+  //   left: 11%;
 }
 
 .images {
   width: 40%;
-//   height: -webkit-fill-available;;
+  //   height: -webkit-fill-available;;
 }
 
 .quantity-description {
@@ -107,7 +115,7 @@ img {
   margin-top: 47px;
   width: 64%;
   height: 100%;
-//   top: 14.5%;
+  //   top: 14.5%;
   left: 34%;
 }
 
@@ -123,16 +131,16 @@ img {
 }
 
 .serve {
-    // padding-left: 16px;
-    text-transform: none;
-    letter-spacing: 0;
-    // margin-bottom: 17px;
-    color: $dark;
-    font-size: .9em;
-    line-height: 1.5em;
-    margin-right: 25px;
-    text-align: justify;
-  }
+  // padding-left: 16px;
+  text-transform: none;
+  letter-spacing: 0;
+  // margin-bottom: 17px;
+  color: $dark;
+  font-size: .9em;
+  line-height: 1.5em;
+  margin-right: 25px;
+  text-align: justify;
+}
 
 button {
   background: darken($light, 10%);

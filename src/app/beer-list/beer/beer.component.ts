@@ -13,6 +13,7 @@ export class BeerComponent implements OnInit {
 
   @Input() beer: Beer;
   @Input() isForSuggestion = false;
+  mouseOvered: boolean;
   constructor(
     private beerService: BeerService,
     private dialog: MatDialog

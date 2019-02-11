@@ -16,7 +16,7 @@ export class BeerDetailsDialogComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<BeerDetailsDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public beer: Beer,
+    @Inject(MAT_DIALOG_DATA) public beer: any,
     private beerService: BeerService
   ) { }
 
